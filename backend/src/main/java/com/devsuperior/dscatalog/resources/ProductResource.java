@@ -37,15 +37,15 @@ public class ProductResource {
         return ResponseEntity.ok(productDTO);
     }
 
-//    @PostMapping
-//    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO productDTO) {
-//        productDTO = service.insert(productDTO);
-//        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .path("/{id}")
-//                .buildAndExpand(productDTO.getId())
-//                .toUri();
-//        return ResponseEntity.created(uri).body(productDTO);
-//    }
+    @PostMapping
+    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO productDTO) {
+        productDTO = service.insert(productDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(productDTO.getId())
+            .toUri();
+        return ResponseEntity.created(uri).body(productDTO);
+    }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
