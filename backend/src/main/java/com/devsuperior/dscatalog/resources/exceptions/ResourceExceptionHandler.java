@@ -28,7 +28,7 @@ public class ResourceExceptionHandler {
 
     @ExceptionHandler(DatabaseException.class)
     public ResponseEntity<StandardError> database(
-            ResourceNotFoundException exception, HttpServletRequest request) {
+            DatabaseException exception, HttpServletRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError standardError = new StandardError();
         standardError.setTimestamp(Instant.now());

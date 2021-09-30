@@ -70,7 +70,7 @@ public class ProductService {
             throw new ResourceNotFoundException("Produto de id " + id + " não encontrado");
         }
         catch (DataIntegrityViolationException exception) {
-            throw new DatabaseException("Integridade dos dados viola");
+            throw new DatabaseException("Integridade dos dados violada");
         }
     }
 
