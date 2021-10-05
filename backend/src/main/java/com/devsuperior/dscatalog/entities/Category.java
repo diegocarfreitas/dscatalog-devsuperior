@@ -30,6 +30,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
+    public Category(Long id, String name) {
+        this(name);
+        this.id = id;
+    }
+
     @PrePersist
     public void prePersist() {
         createdAt = Instant.now();
