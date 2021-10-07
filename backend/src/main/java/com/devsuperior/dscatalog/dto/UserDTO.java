@@ -19,7 +19,7 @@ public class UserDTO implements Serializable {
 
     private Long id;
 
-    @NotBlank(message = "O campo \"Primeiro Nome\" é obrigatório")
+    @NotBlank(message = "O campo 'Primeiro Nome' é obrigatório")
     private String firstName;
     private String lastName;
 
